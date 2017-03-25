@@ -32,7 +32,7 @@ public class JobOffersControllerIT {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
+        this.base = new URL("http://localhost:" + port + "/getOfferIds");
     }
 
     @Test
@@ -41,7 +41,7 @@ public class JobOffersControllerIT {
                 String.class);
         assertThat(
                 response.getBody(),
-                equalTo("Job offers index" + System.getProperty("line.separator"))
+                equalTo("[]")
         );
     }
 
