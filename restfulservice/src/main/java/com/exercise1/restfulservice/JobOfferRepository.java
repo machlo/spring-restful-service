@@ -14,5 +14,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "jobs", path = "jobs")
 public interface JobOfferRepository extends PagingAndSortingRepository<JobOffer, Long> {
 
-    List<JobOffer> findByContent(@Param("content") String content);
+    List<JobOffer> findByContent(@Param("equals") String content);
+
+    List<JobOffer> findByContentContaining(@Param("contains") String content);
 }
